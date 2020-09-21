@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect  #不加这句则默认为myisam引擎
+    hibernate:
+      ddl-auto: update
+      # mysql存储类型配置      
+  datasource:
+    url: jdbc:mysql://ip:3306/test?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=PRC
+    username: root
+    password: xxxxxxxx
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 30
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 40000
+      connection-test-query: SELECT 1
